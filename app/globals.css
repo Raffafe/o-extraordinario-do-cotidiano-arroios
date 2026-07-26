@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=DM+Sans:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --paper: #f8f5fa;
+  --ink: #35312d;
+  --terracotta: #a9573d;
+  --green: #778161;
+  --rose: #d8a59b;
+  --gold: #d8a756;
+  --cream: #fffaf2;
+  --line: rgba(74, 65, 57, .16);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 10% 8%, rgba(211, 171, 220, .36), transparent 34rem),
+    radial-gradient(ellipse at 86% 5%, rgba(154, 190, 222, .34), transparent 38rem),
+    radial-gradient(ellipse at 72% 30%, rgba(235, 181, 199, .28), transparent 32rem),
+    radial-gradient(ellipse at 16% 48%, rgba(177, 193, 228, .25), transparent 36rem),
+    radial-gradient(ellipse at 88% 68%, rgba(206, 175, 220, .28), transparent 34rem),
+    radial-gradient(ellipse at 30% 90%, rgba(237, 190, 207, .26), transparent 38rem),
+    var(--paper);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+}
+img { object-fit: cover; }
+p { line-height: 1.72; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  letter-spacing: -.025em;
+}
+h1 { font-size: clamp(3.2rem, 7vw, 6.8rem); line-height: .85; margin-bottom: 1.6rem; }
+h1 em { color: var(--terracotta); font-weight: 500; }
+h2 { font-size: clamp(2.4rem, 4.8vw, 4.5rem); line-height: .95; margin-bottom: 1.3rem; }
+h3 { font-size: 1.1rem; font-weight: 500; margin-bottom: .5rem; }
+.section { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+.topbar {
+  width: min(1160px, calc(100% - 40px));
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--green);
+  font-size: .75rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.brand {
+  color: var(--ink);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: none;
+}
+.hero {
+  min-height: 710px;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: clamp(30px, 6vw, 90px);
+  align-items: center;
+  padding: 72px 0 104px;
+}
+.heroCopy > p:not(.eyebrow) { max-width: 47ch; font-size: 1.04rem; }
+.heroCopy h2 {
+  font-family: "DM Sans", sans-serif;
+  font-size: .95rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+.eyebrow {
+  color: var(--terracotta);
+  font-size: .73rem;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
+}
+.button {
+  display: inline-block;
+  margin-top: 1.15rem;
+  padding: 13px 22px;
+  border: 1px solid var(--terracotta);
+  border-radius: 999px;
+  color: var(--terracotta);
+  text-decoration: none;
+  font-size: .86rem;
+}
+.heroImage, .atelierImage, .archiveImage, .objectiveImage, .monthImage {
+  position: relative;
+  overflow: hidden;
+  background: #e8dfd3;
+}
+.heroImage { height: 550px; border-radius: 46% 54% 41% 59% / 56% 39% 61% 44%; }
+.intro { padding: 108px 0 128px; text-align: center; }
+.intro > h2 { margin-bottom: 64px; }
+.objectives {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  text-align: left;
+}
+.objectiveImage { height: 265px; border-radius: 48% 52% 12px 12px; margin-bottom: 20px; }
+.objectives article:nth-child(2) .objectiveImage { border-radius: 12px 48% 12px 52%; }
+.objectives article:nth-child(3) .objectiveImage { border-radius: 52% 12px 48% 12px; }
+.objectives article:nth-child(3) .objectiveImage img { object-position: center 32%; }
+.objectives p { color: #665f58; font-size: .92rem; }
+.atelierBand {
+  background:
+    radial-gradient(ellipse at 18% 24%, rgba(186, 166, 218, .34), transparent 38rem),
+    radial-gradient(ellipse at 82% 70%, rgba(151, 191, 221, .3), transparent 34rem),
+    rgba(248, 241, 248, .72);
+  padding: 105px 0;
+}
+.atelier { display: grid; grid-template-columns: 1.05fr .95fr; gap: 72px; align-items: center; }
+.atelierImage { height: 510px; border-radius: 14px 46% 14px 14px; }
+.atelier > div:last-child { max-width: 48ch; }
+.method {
+  padding: 125px 0;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 100px;
+}
+.methodHeading > p:last-child { max-width: 42ch; }
+.method ol { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.method li {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.method li span { color: var(--terracotta); font-family: "Cormorant Garamond", serif; font-size: 1.5rem; }
+.method li p { margin: 0; color: #665f58; font-size: .9rem; }
+.monthsBand {
+  background:
+    radial-gradient(ellipse at 8% 10%, rgba(232, 174, 200, .34), transparent 36rem),
+    radial-gradient(ellipse at 92% 28%, rgba(158, 192, 226, .32), transparent 39rem),
+    radial-gradient(ellipse at 42% 88%, rgba(196, 171, 220, .3), transparent 36rem),
+    rgba(248, 244, 250, .72);
+  padding: 120px 0;
+}
+.monthsHeading { display: grid; grid-template-columns: 1.2fr .8fr; gap: 50px; align-items: end; margin-bottom: 70px; }
+.monthsHeading > p { max-width: 38ch; }
+.months { display: grid; grid-template-columns: 1fr 1fr; gap: 56px 28px; }
+.monthCard {
+  background: rgba(255,250,242,.74);
+  color: inherit;
+  text-decoration: none;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.monthCard:hover,
+.monthCard:focus-visible {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 45px rgba(70, 56, 76, .12);
+}
+.monthImage { height: 330px; }
+.monthCopy { padding: 26px 28px 30px; }
+.monthName { color: var(--terracotta); text-transform: uppercase; letter-spacing: .14em; font-size: .72rem; margin-bottom: 10px; }
+.monthCopy h3 { font-family: "Cormorant Garamond", serif; font-size: 2rem; line-height: 1.02; }
+.monthCopy > p:not(.monthName) { color: #665f58; font-size: .91rem; margin-bottom: 0; }
+.monthLink {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 20px;
+  color: var(--terracotta);
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.archive { padding: 125px 0; display: grid; grid-template-columns: .95fr 1.05fr; gap: 70px; align-items: center; }
+.archiveImage { height: 520px; border-radius: 52% 14px 14px 14px; }
+
+.exhibitionHero {
+  min-height: 660px;
+  padding: 75px 0 105px;
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 80px;
+  align-items: center;
+}
+.exhibitionHero h1 {
+  font-size: clamp(3.3rem, 6vw, 6rem);
+  line-height: .92;
+}
+.exhibitionHero > div:first-child > p:not(.eyebrow, .temporaryNote) {
+  max-width: 50ch;
+}
+.exhibitionHeroImage {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+  border-radius: 46% 54% 14px 14px / 40% 48% 14px 14px;
+  background: #e8dfd3;
+}
+.backLink {
+  display: inline-block;
+  margin-bottom: 42px;
+  color: var(--green);
+  font-size: .82rem;
+  text-decoration: none;
+}
+.temporaryNote {
+  margin-top: 24px;
+  padding-left: 18px;
+  border-left: 2px solid var(--rose);
+  color: #746c63;
+  font-size: .84rem;
+  max-width: 52ch;
+}
+.schoolIndex {
+  padding: 110px 0 125px;
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
+.schoolIndex > h2 { margin-bottom: 55px; }
+.schoolCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  text-align: left;
+}
+.schoolCard {
+  min-height: 275px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 250, 242, .72);
+  border: 1px solid rgba(74, 65, 57, .08);
+  color: inherit;
+  text-decoration: none;
+  transition: transform .25s ease, background .25s ease;
+}
+.schoolCard:hover,
+.schoolCard:focus-visible {
+  transform: translateY(-4px);
+  background: rgba(255, 250, 242, .96);
+}
+.schoolCardTop {
+  min-height: 86px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+.schoolCardTop > span:first-child {
+  color: var(--terracotta);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.45rem;
+}
+.schoolSymbol {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  flex: 0 0 84px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(98, 73, 45, .08);
+}
+.schoolSymbol img {
+  object-fit: contain;
+}
+.schoolCard h3 {
+  margin-top: 18px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+}
+.schoolCard p {
+  color: #665f58;
+  font-size: .87rem;
+}
+.schoolCard strong {
+  margin-top: auto;
+  color: var(--green);
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.schoolExhibitions {
+  background:
+    radial-gradient(ellipse at 12% 12%, rgba(211, 171, 220, .28), transparent 34rem),
+    radial-gradient(ellipse at 88% 48%, rgba(154, 190, 222, .25), transparent 38rem),
+    rgba(248, 244, 250, .7);
+}
+.schoolGallery {
+  min-height: 620px;
+  padding: 110px 0;
+  display: grid;
+  grid-template-columns: .82fr 1.18fr;
+  gap: 80px;
+  align-items: center;
+  scroll-margin-top: 28px;
+}
+.schoolGallery + .schoolGallery { border-top: 1px solid var(--line); }
+.schoolGalleryHeading p:last-child { max-width: 42ch; color: #665f58; }
+.galleryPlaceholder {
+  min-height: 390px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px dashed rgba(119, 129, 97, .45);
+  border-radius: 12px 45% 12px 12px;
+  background: rgba(255, 250, 242, .5);
+}
+.galleryPlaceholder span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.35rem;
+  color: var(--green);
+}
+.galleryPlaceholder p {
+  margin: 12px 0 0;
+  color: #746c63;
+  font-size: .88rem;
+}
+.footerMark { color: inherit; text-decoration: none; }
+
+footer {
+  border-top: 1px solid var(--line);
+  width: min(1160px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 35px 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  font-size: .8rem;
+}
+footer div:first-child { display: grid; gap: 5px; }
+footer span { color: #746c63; }
+.footerMark { font-family: "Cormorant Garamond", serif; font-size: 1.7rem; font-style: italic; }
+
+@media (max-width: 760px) {
+  .topbar > span { display: none; }
+  .hero, .atelier, .method, .monthsHeading, .archive, .exhibitionHero, .schoolGallery { grid-template-columns: 1fr; }
+  .hero { padding-top: 48px; min-height: auto; }
+  .heroImage { height: 420px; }
+  .objectives, .months, .schoolCards { grid-template-columns: 1fr; }
+  .objectiveImage { height: 340px; }
+  .atelierImage, .archiveImage { height: 390px; }
+  .method, .archive { gap: 45px; }
+  .exhibitionHero { padding-top: 45px; gap: 45px; }
+  .exhibitionHeroImage { height: 390px; }
+  .schoolGallery { gap: 35px; }
+  .galleryPlaceholder { min-height: 300px; }
+  footer { align-items: start; flex-direction: column; gap: 24px; }
+}
